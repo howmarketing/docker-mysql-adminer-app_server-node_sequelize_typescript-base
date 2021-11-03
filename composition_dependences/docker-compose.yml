@@ -9,7 +9,7 @@ services:
       - myblenet-app-server-network
 
   server_app:
-    image: myblenet/app_server_presets:1.0.0
+    image: myblenet/app_server_presets:1.0.1
     expose:
       - "80"
       - "81"
