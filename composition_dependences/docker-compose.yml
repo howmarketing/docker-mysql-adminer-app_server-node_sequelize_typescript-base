@@ -21,7 +21,7 @@ services:
       - mysql-compose-network
 
   server_app:
-    image: myblenet/app_server_presets:tagname
+    image: myblenet/app_server_presets:1.0.0
     ports:
       - "8888:80"
     volumes:
