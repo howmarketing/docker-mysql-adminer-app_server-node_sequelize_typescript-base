@@ -9,11 +9,11 @@ sleep 10
 
 docker ps
 
-echo "In 10 seconds - exec bash script file updating mysql password authenticat to mysql_native_password for global connection as root user"
+# echo "In 10 seconds - exec bash script file updating mysql password authenticat to mysql_native_password for global connection as root user"
 
-sleep 10
+# sleep 10
 
-sudo docker exec -it composition_dependences_mysqlsrv_1 bash /var/lib/mysql/mysql_set_native_password.sh
+# sudo docker exec -it composition_dependences_mysqlsrv_1 bash /var/lib/mysql/mysql_set_native_password.sh
 
 echo "Start mysql service to be able to connect through mysql cli library dependences"
 
