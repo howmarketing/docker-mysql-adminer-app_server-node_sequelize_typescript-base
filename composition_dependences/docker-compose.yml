@@ -10,12 +10,16 @@ services:
 
   server_app:
     image: myblenet/app_server_presets:1.0.1
-    expose:
-      - "80"
-      - "81"
     ports:
       - "8000:80"
-      - "8881:81"
+      - "8181:81"
+      - "3000:3000"
+      - "3333:3333"
+      - "3366:3306"
+      - "8881:8881"
+      - "8882:8882"
+      - "8883:8883"
+      - "8884:8884"
     volumes:
       - ./../app:/usr/local/apache2/htdocs/app
     networks:
