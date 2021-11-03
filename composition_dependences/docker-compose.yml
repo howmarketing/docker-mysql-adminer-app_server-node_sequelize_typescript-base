@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  mysqlsrv:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: "docker"
+      MYSQL_DATABASE: "docker"
+    ports:
+      - "3366:3306"
+    volumes:
+      - ./../mysql_server:/var/lib/mysql
+    networks:
+      - mysql-compose-network
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - mysql-compose-network
+
+  server_app:
+    image: myblenet/app_server_presets:tagname
+    ports:
+      - "8888:80"
+    volumes:
+      - ./../app:/usr/local/apache2/htdocs/app
+    networks:
+      - mysql-compose-network
+
+networks: 
+  mysql-compose-network:
+    driver: bridge
