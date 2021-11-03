@@ -24,6 +24,8 @@ services:
     image: myblenet/app_server_presets:1.0.0
     ports:
       - 8000:80
+      - 8881:81
+      - 33060:3306
     volumes:
       - /Applications/XAMPP/xamppfiles/htdocs/docker/docker-mysql-adminer-app_server-node_sequelize_typescript-base/app:/usr/local/apache2/htdocs/app
     networks:
