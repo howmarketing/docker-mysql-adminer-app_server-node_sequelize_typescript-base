@@ -17,19 +17,7 @@ services:
       - "8000:80"
       - "8881:81"
     volumes:
-      - /Applications/XAMPP/xamppfiles/htdocs/docker/docker-mysql-adminer-app_server-node_sequelize_typescript-base/app:/usr/local/apache2/htdocs/app
-    networks:
-      - myblenet-app-server-network
-  
-  mysqlsrv:
-    image: mysql:5.7
-    environment:
-      MYSQL_ROOT_PASSWORD: "docker"
-      MYSQL_DATABASE: "docker"
-    ports:
-      - "3366:3306"
-    volumes:
-      - /Applications/XAMPP/xamppfiles/htdocs/docker/docker-mysql-adminer-app_server-node_sequelize_typescript-base/mysql_server:/var/lib/mysql
+      - ./../app:/usr/local/apache2/htdocs/app
     networks:
       - myblenet-app-server-network
 
