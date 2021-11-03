@@ -1,6 +1,7 @@
 #!/bin/bash/
 
-# start docker pose upping images already setting up for mysql and server using apache as virtualization network and nodejs
+echo "Start docker pose upping images already setting up for mysql and server using apache as virtualization network and nodejs"
+
 sudo docker-compose up -d
 
 echo "in 20 seconds - exec bash script file updating mysql password authenticat to mysql_native_password for global connection as root user"

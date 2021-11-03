@@ -2,12 +2,12 @@ version: '3'
 
 services:
   mysqlsrv:
-    image: mysql:8.0
+    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: "docker"
       MYSQL_DATABASE: "docker"
     ports:
-      - 3366:3306
+      - 33660:3306
     volumes:
       - ./../mysql_server:/var/lib/mysql
     networks:
@@ -16,14 +16,14 @@ services:
   adminer:
     image: adminer
     ports:
-      - 8080:8080
+      - 8888:8080
     networks:
       - mysql-compose-network
 
   server_app:
     image: myblenet/app_server_presets:1.0.0
     ports:
-      - 8888:80
+      - 8880:80
     volumes:
       - ./../app:/usr/local/apache2/htdocs/app
     networks:
