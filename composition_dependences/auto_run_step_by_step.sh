@@ -22,3 +22,6 @@ sudo docker exec -it composition_dependences_server_app_1 bash service mysql sta
 echo "Exec git shell script seting up git init and remote to app base repository"
 
 sudo docker exec -it composition_dependences_server_app_1 bash /usr/local/apache2/htdocs/app/git_presets.sh 
+
+sudo docker exec -it composition_dependences_server_app_1 bash /usr/local/apache2/htdocs/app/mysql_preset_user_and_database.sh 
+
