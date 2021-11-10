@@ -1,30 +1,15 @@
 version: '3'
 
 services:
-  adminer:
-    image: adminer
-    ports:
-      - "8080:8080"
-    networks:
-      - myblenet-app-server-network
-
   server_app:
     image: myblenet/app_server_presets:1.0.1
     ports:
       - "8000:80"
-      - "8181:81"
-      - "3000:3000"
+      - "8181:8181"
       - "3333:3333"
+      - "3000-3030:3000-3030"
       - "3366:3306"
-      - "8881:8881"
-      - "8882:8882"
-      - "8883:8883"
-      - "8884:8884"
+      - "3307-3365:3306"
+      - "8881-8889:8881-8889"
     volumes:
       - ./../app:/usr/local/apache2/htdocs/app
-    networks:
-      - myblenet-app-server-network
-
-networks: 
-  myblenet-app-server-network:
-    driver: bridge
